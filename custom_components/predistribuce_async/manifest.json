@@ -1,5 +1,5 @@
 {
-    "domain": "predistribuce",
+    "domain": "predistribuce_async",
     "name": "PRE Distribuce",
     "documentation": "https://github.com/slesinger/HomeAssistant-PREdistribuce",
     "issue_tracker": "https://github.com/slesinger/HomeAssistant-PREdistribuce/issues",
