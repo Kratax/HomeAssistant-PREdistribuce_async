@@ -1,5 +1,5 @@
 {
-  "domain": "predistribuce",
+  "domain": "predistribuce_async",
   "name": "PRE Distribuce CZ",
   "version": "2.0.0",
   "documentation": "https://github.com/Kratax/HomeAssistant-PREdistribuce",
