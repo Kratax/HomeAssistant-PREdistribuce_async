@@ -5,7 +5,7 @@
 This sensor is scraping data from https://www.predistribuce.cz/cs/potrebuji-zaridit/zakaznici/stav-hdo/. Put id of receiver command (see contract with PRE CZ or your energy meter) in configuration.yaml
 
 Adjusted based on https://github.com/slesinger/homeassistant-predistribuce
-
+Created with Gemini to comply with the new async approach in HA and several other changes
 
 This sensor always show
 - current state of HDO
@@ -18,7 +18,7 @@ optionally also
 
 ### Installation
 
-Copy this folder to `<config_dir>/custom_components/predistribuce/`.
+Copy this folder to `<config_dir>/custom_components/predistribuce_async/`.
 
 Add the following to your `configuration.yaml` file:
 
@@ -49,6 +49,62 @@ sensor:
     receiver_command_id: 605
 
 
+
+```
+For creation of apex chart use:
+```yaml
+type: custom:apexcharts-card
+header:
+  show: true
+  title: HDO Rozvrh (Dnes)
+  show_states: false
+  colorize_states: true
+graph_span: 24h
+span:
+  start: day
+apex_config:
+  chart:
+    height: 140px
+    type: area
+    toolbar:
+      show: false
+  yaxis:
+    min: 0
+    max: 1
+    tickAmount: 1
+    labels:
+      show: true
+      style:
+        fontSize: 10px
+  xaxis:
+    type: datetime
+    labels:
+      show: true
+      format: HH
+      rotate: 0
+      style:
+        fontSize: 10px
+    tickAmount: 8
+  grid:
+    show: true
+    strokeDashArray: 3
+  dataLabels:
+    enabled: false
+  stroke:
+    width: 2
+series:
+  - entity: sensor.hdo_cas_do_zmeny_tarifu
+    name: Tarif
+    curve: stepline
+    type: area
+    color: "#4caf50"
+    data_generator: |
+      return entity.attributes.schedule.map((entry) => {
+        const now = new Date();
+        const [hours, minutes] = entry.start.split(':');
+        const timestamp = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes).getTime();
+        return [timestamp, entry.tariff === 'N' ? 1 : 0];
+      });
 
 ```
 
