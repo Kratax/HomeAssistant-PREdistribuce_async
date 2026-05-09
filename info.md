@@ -5,6 +5,7 @@ This integration provides sensors informing about low/high energy tariff (HDO), 
 This sensor shows:
 - current state of HDO
 - time to reach low tariff or time needed to wait for low tarrif
+- data for Apex charts to visualize that
 
 optionally also
 -  if a an appliance (e.g. washing machine) can be run at the moment to finish operation within low tariff window (time is configurable)
