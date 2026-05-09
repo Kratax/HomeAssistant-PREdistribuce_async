@@ -40,6 +40,7 @@ binary_sensor:
         minutes: 30
       - name: HDO Myčka
         minutes: 150
+```
 
 ```yaml
 
