@@ -1,10 +1,11 @@
 {
-    "domain": "predistribuce_async",
-    "name": "PRE Distribuce",
-    "documentation": "https://github.com/slesinger/HomeAssistant-PREdistribuce",
-    "issue_tracker": "https://github.com/slesinger/HomeAssistant-PREdistribuce/issues",
-    "dependencies": [],
-    "codeowners": ["@slesinger"],
-    "version": "1.0.1",
-    "requirements": ["lxml==5.3.0"]
+  "domain": "predistribuce",
+  "name": "PRE Distribuce CZ",
+  "version": "2.0.0",
+  "documentation": "https://github.com/Kratax/HomeAssistant-PREdistribuce",
+  "issue_tracker": "https://github.com/Kratax/HomeAssistant-PREdistribuce/issues",
+  "codeowners": [
+    "@Kratax"
+  ],
+  "iot_class": "cloud_polling"
 }
