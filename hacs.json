@@ -1,9 +1,14 @@
 {
-    "name": "PRE Distribuce CZ",
-    "render_readme": false,
-    "domains": [
-	"binary_sensor"
-    ],
-    "country": "CZ",
-    "homeassistant": "2022.5.6"
+  "domain": "predistribuce",
+  "name": "PRE Distribuce CZ",
+  "version": "2.0.0",
+  "documentation": "https://github.com/Kratax/HomeAssistant-PREdistribuce_async",
+  "issue_tracker": "https://github.com/Kratax/HomeAssistant-PREdistribuce_async/issues",
+  "codeowners": [
+    "@Kratax"
+  ],
+  "requirements": [
+    "lxml>=4.9.0"
+  ],
+  "iot_class": "cloud_polling"
 }
